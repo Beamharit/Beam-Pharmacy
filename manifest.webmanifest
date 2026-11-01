@@ -1,1 +1,23 @@
-{"name":"Beam Pharmacy v3 — Team Tasks","short_name":"Beam Pharmacy","start_url":"./","display":"standalone","background_color":"#ffffff","theme_color":"#398b35","icons":[{"src":"logo.png","sizes":"any","type":"image/png","purpose":"any"}]}
+{
+  "name": "Beam Pharmacy v3.1 — Two-Branch Team",
+  "short_name": "BeamPharmacy",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#398b35",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

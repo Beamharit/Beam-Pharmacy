@@ -1,0 +1,10 @@
+{
+  "name":"Beam Pharmacy",
+  "short_name":"Beam Tasks",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#ffffff",
+  "theme_color":"#ffffff",
+  "description":"Minimal personal task manager by Beam Pharmacy",
+  "icons":[{"src":"logo.png","sizes":"any","type":"image/png","purpose":"any"}]
+}

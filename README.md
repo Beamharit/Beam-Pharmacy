@@ -1,23 +1,19 @@
-# Beam Pharmacy
+# Beam Pharmacy — Voice Task Manager (v2)
 
-Minimal personal task manager (PWA-ready).
+## Features
+- Thai speech-to-text, when supported by the browser (Web Speech API, microphone permission and often internet required)
+- Rule-based extraction of Thai dates/times in simple utterances (not full AI; check the parsed result before saving)
+- Create, edit, complete, delete and search tasks; Today, Upcoming and status filters
+- Priority and due date + time
+- Notification permission and on-time notifications **while the web app is open/active**. Checks every 15 seconds and when returning to the app, with a 5-minute late window. This is **not** server push and cannot guarantee reminders when the app/browser is closed, asleep or suspended.
+- Existing tasks are preserved by using the original `beam-pharmacy-tasks-v1` localStorage key.
+- Offline PWA caching (speech recognition may require an internet connection).
 
-## Included
-- Add, complete, filter, and delete tasks
-- Priority and due date
-- Saves tasks in this browser using localStorage
-- Installable as a PWA when hosted over HTTPS
-- Basic offline cache
+## Install / update on GitHub Pages
+Replace `index.html`, `sw.js`, `README.md` with the files in this package. Keep the `logo.png` and `manifest.webmanifest` at the repository root. GitHub Pages must be enabled for the `main` branch at `/ (root)`. Open https://beamharit.github.io/Beam-Pharmacy/ after deployment. If seeing the old version, reload / reopen the app.
 
-## Run locally
-Open `index.html` in a browser to test the basic app. PWA installation and offline caching require HTTPS hosting (or localhost).
+## Next step for real background push
+Add a backend / cloud scheduler (e.g. Cloudflare Workers + durable scheduled task storage, or Firebase Cloud Messaging + server scheduler) to store and dispatch scheduled Web Push notifications using VAPID keys; subscribe devices to Push API and handle incoming `push` events in the service worker. iOS requires an installed Home Screen web app for Web Push on supported iOS versions. This is not implemented in the present static GitHub Pages build. Cloud sync would require authentication and server storage too.
 
-## Free hosting
-You can publish this folder with GitHub Pages:
-1. Create/sign in to GitHub.
-2. Create a new public repository, e.g. `beam-pharmacy`.
-3. Upload all files in this folder to the repository root.
-4. In Settings -> Pages, choose Deploy from a branch, select `main` and `/ (root)`, then Save.
-5. Open the Pages URL on your phone. On iPhone use Safari -> Share -> Add to Home Screen. On Android use Chrome -> menu -> Install app / Add to Home screen.
-
-Data is stored on each device/browser. It does not automatically sync between devices. Export/backup and cloud sync can be added in a later version.
+## Privacy
+Tasks are currently stored in localStorage on each browser/device and do not sync between devices. Do not use it to store patient-identifying or confidential clinical information. Some browsers may send spoken audio to a speech-recognition provider.
